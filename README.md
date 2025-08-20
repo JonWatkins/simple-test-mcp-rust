@@ -2,14 +2,6 @@
 
 A basic demonstration implementation of the Model Context Protocol (MCP) server in Rust. This is a simple example showing how to create an MCP server that provides tools and resources for AI agents.
 
-## What is MCP?
-
-The Model Context Protocol (MCP) is a standard protocol that enables AI agents to interact with external tools and resources in a structured way. It provides a JSON-RPC based interface for:
-
-- Tool execution (functions that the AI can call)
-- Resource management (files, data, etc.)
-- Structured communication between AI agents and external services
-
 ## Demo Features
 
 This simple demo MCP server provides:
