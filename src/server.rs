@@ -82,9 +82,8 @@ impl McpServer {
     }
 
     async fn handle_initialize(&self, request: JsonRpcRequest) -> Result<Option<McpResponse>> {
-        let params: InitializeParams = serde_json::from_value(
-            request.params.unwrap_or_else(|| serde_json::json!({})),
-        )?;
+        let params: InitializeParams =
+            serde_json::from_value(request.params.unwrap_or_else(|| serde_json::json!({})))?;
         info!(
             "Initializing MCP server with protocol version: {}",
             params.protocol_version

@@ -1,5 +1,5 @@
-mod types;
 mod server;
+mod types;
 
 use anyhow::Result;
 use tokio::io::{AsyncBufReadExt, AsyncWriteExt};
