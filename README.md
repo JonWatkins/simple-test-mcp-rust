@@ -82,6 +82,44 @@ echo '{"jsonrpc":"2.0","id":"1","method":"initialize","params":{"protocolVersion
 }
 ```
 
+## Using with Cursor
+
+To use this MCP server with Cursor, you need to configure it in your Cursor settings:
+
+1. **Build the server:**
+   ```bash
+   cargo build --release
+   ```
+
+2. **Find the binary path:**
+   The compiled binary will be at `target/release/test-mcp`
+
+3. **Configure Cursor:**
+   - Open Cursor settings
+   - Search for "MCP" or "Model Context Protocol"
+   - Add the following configuration:
+
+```json
+{
+  "mcpServers": {
+    "test-mcp": {
+      "command": "/path/to/your/project/target/release/test-mcp",
+      "args": [],
+      "env": {}
+    }
+  }
+}
+```
+
+4. **Restart Cursor** for the changes to take effect
+
+5. **Test the integration:**
+   - Open a chat in Cursor
+   - Try asking the AI to use the available tools (echo, add)
+   - The AI should now be able to call your MCP server's tools
+
+**Note:** Replace `/path/to/your/project/` with the actual absolute path to your project directory.
+
 ## Project Structure
 
 ```
